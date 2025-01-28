@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NextHM | Register</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Themesdesign" />
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'auth/css/bootstrap.min.css' %}" type="text/css">
+
+    <!--Material Icon -->
+    <link rel="stylesheet" type="text/css" href="{% static 'auth/css/materialdesignicons.min.css' %}" />
+
+    <!-- Custom  Css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'auth/css/style.css' %}" />
+
+</head>
+
+<body>
+
+    <!-- START Auth -->
+    <section class="authentication-box d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 100px);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-3" style="width: 35%;">
+                    <div class="">
+                        <div class="text-center pb-4 mb-5">
+                            <img src="{% static 'auth/images/logo-dark.jpg' %}" alt="" height="24">
+                        </div>
+                        <div class="auth-contents">
+                            <div class="text-center">
+                                <h4 class="fw-normal">Register Account to <span class="fw-bold">Next HM</span></h4>
+                                <p class="text-muted">Sign up to continue to Next HM.</p>
+                            </div>
+                            <form method="post" action="{% url 'accounts:register' %}" class="custom-form mt-4 pt-2">
+                                {% csrf_token %}
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold f-15">Email address</label>
+                                    <input type="text" class="form-control" name="email" id="email" placeholder="Enter email">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold f-15">Username</label>
+                                    <input type="text" class="form-control" name="username" id="username" placeholder="Enter username">
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="user_type" id="inlineRadio1" value="user" checked>
+                                    <label class="form-check-label" for="inlineRadio1">User</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="user_type" id="inlineRadio2" value="agent">
+                                    <label class="form-check-label" for="inlineRadio2">Agent</label>
+                                  </div>
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold f-15">Password</label>
+                                    <input type="password" class="form-control" name="password" id="password" placeholder="Enter password">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold f-15">Confirm Password</label>
+                                    <input type="password" class="form-control" name="cpassword" id="cpassword" placeholder="Confirm password">
+                                </div>
+                                <div class="mt-4">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customControlInline">
+                                        <label class="custom-control-label f-14 text-muted fw-bold" for="customControlInline">Remember me</label>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <button class="btn btn-success shadow-none w-100 rounded-pill" type="submit">Register</button>
+                                </div>
+                                <hr>
+                                <div class="mt-3 text-center">
+                                    <p class="text-muted mb-0">Already have an account? 
+                                        <a href="{% url 'accounts:login' %}" class="fw-bold text-success"> Sign in now </a>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END Auth -->
+
+    <!-- bootstrap -->
+    <script src="{% static 'auth/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- CUSTOM JS -->
+    <script src="{% static 'auth/js/app.js' %}"></script>
+</body>
+
+</html>
+{% endblock %}

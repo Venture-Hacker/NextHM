@@ -1,0 +1,168 @@
+
+
+{% block content %}
+<h2 class="text-center mb-4">Add Property</h2>
+<div class="container">
+    <form method="post" enctype="multipart/form-data" class="property-form">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="{{ form.title.id_for_label }}">Title</label>
+            {{ form.title }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.tagline.id_for_label }}">Tagline</label>
+            {{ form.tagline }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.phone_no.id_for_label }}">Phone No.</label>
+            {{ form.phone_no }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.email.id_for_label }}">Email Address</label>
+            {{ form.email }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.location.id_for_label }}">Location</label>
+            {{ form.location }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.starting_price.id_for_label }}">Starting Price</label>
+            {{ form.starting_price }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.area_size.id_for_label }}">Area (Size)</label>
+            {{ form.area_size }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.category.id_for_label }}">Category</label>
+            {{ form.category }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.cover_photo.id_for_label }}">Cover Photo</label>
+            {{ form.cover_photo }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.num_beds.id_for_label }}">No. Of Beds</label>
+            {{ form.num_beds }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.num_bathrooms.id_for_label }}">No. Of Bathrooms</label>
+            {{ form.num_bathrooms }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.features.id_for_label }}">Features</label>
+            <div class="features-checkboxes">
+                {{ form.features }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.description.id_for_label }}">Description</label>
+            {{ form.description }}
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Add Property</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
+
+<style>
+    .property-form {
+        background-color: #f8f9fa;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-weight: bold;
+        color: #495057;
+    }
+
+    input[type="text"], input[type="number"], input[type="file"], textarea, select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+    }
+
+    /* Style for the features checkboxes */
+    .features-checkboxes input[type="checkbox"] {
+        display: inline-block;
+        margin-right: 10px;
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        transition: all 0.3s ease;
+    }
+
+    /* Customize checkbox appearance */
+    .features-checkboxes input[type="checkbox"]:checked {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .features-checkboxes input[type="checkbox"]:checked::before {
+        content: '\2713'; /* Checkmark */
+        color: white;
+        font-size: 14px;
+        position: absolute;
+        top: 2px;
+        left: 6px;
+    }
+
+    .features-checkboxes input[type="checkbox"]:not(:checked) {
+        background-color: #ffffff;
+        border: 2px solid #ced4da;
+    }
+
+    .features-checkboxes input[type="checkbox"]:hover {
+        border-color: #007bff;
+    }
+
+    .features-checkboxes label {
+        display: inline-block;
+        margin-right: 15px;
+        font-size: 14px;
+        color: #495057;
+        font-weight: normal;
+        cursor: pointer;
+    }
+
+    /* Style the submit button */
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 4px;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+</style>

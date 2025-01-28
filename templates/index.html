@@ -1,0 +1,1008 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<title>Next HM</title>
+  <!--==============================
+	Hero Area
+	==============================-->
+  <section>
+    <div class="vs-carousel" data-fade="true">
+      <div>
+        <div class="hero-layout1" data-bg-src="{% static 'assets/img/bg/hero-bg.jpg' %}">
+          <div class="overlay"></div>
+          <div class="container">
+            <div class="row justify-content-center text-center">
+              <div class="col-lg-12 col-xl-11">
+                <div class="hero-content">
+                  <div class="hero-logo">
+                    <img src="{% static 'assets/img/hero-logo.png' %}" alt="nextHM">
+                  </div>
+                  <h1 class="hero-title text-white">Find Perfect Place.</h1>
+                </div>
+                <div class="hero-bottom d-none d-lg-block">
+                  <form class="search-form form-style1">
+                    <div class="form-top">
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+                        <label class="form-check-label" for="inlineRadio1">Buy</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">Rent</label>
+                      </div>
+                      
+                    </div>
+                    <div class="form-bottom">
+                      <div class="row align-items-center gx-3 gx-lg-0 gy-3">
+                        <div class="form-group col-md-6 col-lg">
+                          <input type="text" class="form-control" placeholder="Search Home">
+                          <i class="far fa-search"></i>
+                        </div>
+                        <div class="form-group col-md-6 col-lg">
+                          <select class="form-select">
+                            <option selected="selected" hidden="">Select Category</option>
+                            <option value="Consultant">Consultant</option>
+                            <option value="Advertising">Advertising</option>
+                            <option value="Government-Agency">Government Agency</option>
+                            <option value="NotforProfit">Not for Profit</option>
+                          </select>
+                          <i class="far fa-folder"></i>
+                        </div>
+                        <div class="form-group col-md col-lg">
+                          <select class="form-select">
+                            <option selected="selected" hidden="">Find City</option>
+                            <option value="Consultant">Dhaka</option>
+                            <option value="Advertising">Mumbai</option>
+                            <option value="Government-Agency">New Work</option>
+                            <option value="NotforProfit">Landon</option>
+                          </select>
+                          <i class="far fa-map-marker-alt"></i>
+                          <span class="fas fa-sort-down "></span>
+                        </div>
+                        <div class="col-auto">
+                          <button class="vs-btn style2" type="submit">Search Now</button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="hero-layout1" data-bg-src="{% static 'assets/img/bg/hero-bg-1-2.jpg' %}">
+          <div class="overlay"></div>
+          <div class="container">
+            <div class="row justify-content-center text-center">
+              <div class="col-lg-12 col-xl-11">
+                <div class="hero-content">
+                  <div class="hero-logo">
+                    <img src="{% static 'assets/img/hero-logo.png' %}" alt="nextHM">
+                  </div>
+                  <h1 class="hero-title text-white">Find Perfect Place.</h1>
+                </div>
+                <div class="hero-bottom d-none d-lg-block">
+                  <form class="search-form form-style1">
+                    <div class="form-top">
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+                        <label class="form-check-label" for="inlineRadio1">Buy</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">Rent</label>
+                      </div>
+                      
+                    </div>
+                    <div class="form-bottom">
+                      <div class="row align-items-center gx-3 gx-lg-0 gy-3">
+                        <div class="form-group col-md-6 col-lg">
+                          <input type="text" class="form-control" placeholder="Search Home">
+                          <i class="far fa-search"></i>
+                        </div>
+                        <div class="form-group col-md-6 col-lg">
+                          <select class="form-select">
+                            <option selected="selected" hidden="">Select Category</option>
+                            <option value="Consultant">Consultant</option>
+                            <option value="Advertising">Advertising</option>
+                            <option value="Government-Agency">Government Agency</option>
+                            <option value="NotforProfit">Not for Profit</option>
+                          </select>
+                          <i class="far fa-folder"></i>
+                        </div>
+                        <div class="form-group col-md col-lg">
+                          <select class="form-select">
+                            <option selected="selected" hidden="">Find City</option>
+                            <option value="Consultant">Dhaka</option>
+                            <option value="Advertising">Mumbai</option>
+                            <option value="Government-Agency">New Work</option>
+                            <option value="NotforProfit">Landon</option>
+                          </select>
+                          <i class="far fa-map-marker-alt"></i>
+                          <span class="fas fa-sort-down "></span>
+                        </div>
+                        <div class="col-auto">
+                          <button class="vs-btn style2" type="submit">Search Now</button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="hero-layout1" data-bg-src="{% static 'assets/img/bg/hero-bg-1-3.jpg' %}">
+          <div class="overlay"></div>
+          <div class="container">
+            <div class="row justify-content-center text-center">
+              <div class="col-lg-12 col-xl-11">
+                <div class="hero-content">
+                  <div class="hero-logo">
+                    <img src="{% static 'assets/img/hero-logo.png' %}" alt="nextHM">
+                  </div>
+                  <h1 class="hero-title text-white">Find Perfect Place.</h1>
+                </div>
+                <div class="hero-bottom d-none d-lg-block">
+                  <form class="search-form form-style1">
+                    <div class="form-top">
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+                        <label class="form-check-label" for="inlineRadio1">Buy</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">Rent</label>
+                      </div>
+                      
+                    </div>
+                    <div class="form-bottom">
+                      <div class="row align-items-center gx-3 gx-lg-0 gy-3">
+                        <div class="form-group col-md-6 col-lg">
+                          <input type="text" class="form-control" placeholder="Search Home">
+                          <i class="far fa-search"></i>
+                        </div>
+                        <div class="form-group col-md-6 col-lg">
+                          <select class="form-select">
+                            <option selected="selected" hidden="">Select Category</option>
+                            <option value="Consultant">Consultant</option>
+                            <option value="Advertising">Advertising</option>
+                            <option value="Government-Agency">Government Agency</option>
+                            <option value="NotforProfit">Not for Profit</option>
+                          </select>
+                          <i class="far fa-folder"></i>
+                        </div>
+                        <div class="form-group col-md col-lg">
+                          <select class="form-select">
+                            <option selected="selected" hidden="">Find City</option>
+                            <option value="Consultant">Dhaka</option>
+                            <option value="Advertising">Mumbai</option>
+                            <option value="Government-Agency">New Work</option>
+                            <option value="NotforProfit">Landon</option>
+                          </select>
+                          <i class="far fa-map-marker-alt"></i>
+                          <span class="fas fa-sort-down "></span>
+                        </div>
+                        <div class="col-auto">
+                          <button class="vs-btn style2" type="submit">Search Now</button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--==============================
+	Category Area
+	==============================-->
+  <section class="space bg-theme2 overflow-hidden" data-bg-src="{% static 'assets/img/bg/category-bg.jpg' %}">
+    <div class="container">
+      <div class="title-area text-center wow fadeInUp wow-animated" data-wow-delay="0.3s">
+        <h2 class="sec-title">Choose Your Category</h2>
+        <div class="sec-line">
+          <hr>
+        </div>
+        <span class="sec-subtitle">our properties for sale</span>
+      </div>
+      <div class="row mx-4 vs-carousel category-carousel wow fadeInUp" data-wow-delay="0.4s" data-slide-show="5" data-lg-slide-show="2" data-md-slide-show="2" data-center-mode="true" data-xl-center-mode="true" data-ml-center-mode="true" data-lg-center-mode="true" data-md-center-mode="true" data-sm-center-mode="true" data-xs-center-mode="true" data-dots="false">
+        <div class="col-auto">
+          <div class="category-item">
+            <div class="category-style1">
+              <div class="category-icon">
+                <img src="{% static 'assets/img/category/category-1-1.svg' %}" alt="category" class="category-img">
+              </div>
+              <h4 class="category-title"><a href="about.html" class="text-inherit">Apartment</a>
+              </h4>
+              <p class="category-text">3 propertie</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto">
+          <div class="category-item">
+            <div class="category-style1">
+              <div class="category-icon">
+                <img src="{% static 'assets/img/category/category-1-2.svg' %}" alt="category">
+              </div>
+              <h4 class="category-title"><a href="about.html" class="text-inherit">Commercial</a>
+              </h4>
+              <p class="category-text">2 propertie</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto">
+          <div class="category-item">
+            <div class="category-style1">
+              <div class="category-icon">
+                <img src="{% static 'assets/img/category/category-1-3.svg' %}" alt="category">
+              </div>
+              <h4 class="category-title"><a href="about.html" class="text-inherit">Buildings</a>
+              </h4>
+              <p class="category-text">3 propertie</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto">
+          <div class="category-item">
+            <div class="category-style1">
+              <div class="category-icon">
+                <img src="{% static 'assets/img/category/category-1-1.svg' %}" alt="category">
+              </div>
+              <h4 class="category-title"><a href="about.html" class="text-inherit" tabindex="-1">Corporate</a>
+              </h4>
+              <p class="category-text">4 propertie</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto">
+          <div class="category-item">
+            <div class="category-style1">
+              <div class="category-icon">
+                <img src="{% static 'assets/img/category/category-1-2.svg' %}" alt="category">
+              </div>
+              <h4 class="category-title"><a href="about.html" class="text-inherit">Pint House</a>
+              </h4>
+              <p class="category-text">5 propertie</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto">
+          <div class="category-item">
+            <div class="category-style1">
+              <div class="category-icon">
+                <img src="{% static 'assets/img/category/category-1-2.svg' %}" alt="category">
+              </div>
+              <h4 class="category-title"><a href="about.html" class="text-inherit">Pint House</a>
+              </h4>
+              <p class="category-text">5 propertie</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center g-5">
+        <div class="col-xl-4 col-10">
+          <div class="img-box1">
+            <div class="img-1">
+              <img src="{% static 'assets/img/category/category-2-1.png' %}" alt="About Img">
+            </div>
+            <div class="img-2">
+              <img class="w-100" src="{% static 'assets/img/category/category-2-2.png' %}" alt="About Img">
+              <div class="shape-dotted jump-reverse"></div>
+            </div>
+            <div class="img-3">
+              <img src="{% static 'assets/img/category/category-2-3.png' %}" alt="About Img">
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-5 col-lg-6 col-md-6 px-lg-5">
+          <div class="title-area2">
+            <span class="sec-subtitle2">our properties</span>
+            <h2 class="border-title">Your Next Home Apartments</h2>
+          </div>
+          <p class="box-dsc">
+            Survived not only five centuries, but also the leap into electronic typetting, remaining
+            essentiall unchanged in the 1960s with.
+          </p>
+          <div class="list-style1 vs-list">
+            <ul>
+              <li><i class="fas fa-star"></i> Space Dummy printing </li>
+              <li><i class="fas fa-star"></i> Living Space Dummy printing and industry</li>
+              <li><i class="fas fa-star"></i> Deving Space printing and industry</li>
+            </ul>
+          </div>
+          <a href="properties.html" class="vs-btn style3">More Properties</a>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-md-6 px-0">
+          <div class="media-box">
+            <div class="media-style1">
+              <div class="media-item">
+                <div class="row gx-0 mb-30 align-items-center">
+                  <div class="icon-btn2">
+                    <img src="{% static 'assets/img/category/category-3-1.svg' %}" alt="category-icon">
+                  </div>
+                  <div class="media-content col">
+                    <h5 class="media-title">15000</h5>
+                    <p class="media-text">Total House Sale</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="media-style1">
+              <div class="media-item">
+                <div class="row gx-0 mb-30 align-items-center">
+                  <div class="icon-btn2">
+                    <img src="{% static 'assets/img/category/category-3-2.svg' %}" alt="category-icon">
+                  </div>
+                  <div class="media-content col">
+                    <h5 class="media-title">350</h5>
+                    <p class="media-text">Car Parking</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="media-style1">
+              <div class="media-item">
+                <div class="row gx-0 mb-30 align-items-center">
+                  <div class="icon-btn2">
+                    <img src="{% static 'assets/img/category/category-3-3.svg' %}" alt="category-icon">
+                  </div>
+                  <div class="media-content col">
+                    <h5 class="media-title">245</h5>
+                    <p class="media-text">Real Estate</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="media-style1 media-style1--active">
+              <div class="slick-track">
+                <div class="row gx-0 mb-30 align-items-center">
+                  <div class="icon-btn2">
+                    <img src="{% static 'assets/img/category/category-3-4.svg' %}" alt="category-icon">
+                  </div>
+                  <div class="media-content col">
+                    <h5 class="media-title">100K+</h5>
+                    <p class="media-text">Happy Customer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--==============================
+accomodation Area
+==============================-->
+  <section class="accomodation-layout1 bg-title space">
+    <div class="container">
+      <h2 class="accomodation-title">Accommodation</h2>
+      <div class="position-relative">
+        <div class="row gx-50 align-items-lg-center justify-content-center justify-content-md-start wow fadeInUp" data-wow-delay="0.3s">
+          <div class="col-lg-2 order-1 order-md-1">
+            <div class="testi-nav nav-prev">
+              <button class="tab-btn"><img src="{% static 'assets/img/testimonial/auth-6-1.jpg' %}" alt="thumbnail"></button>
+              <button class="tab-btn"><img src="{% static 'assets/img/testimonial/auth-6-2.jpg' %}" alt="thumbnail"></button>
+              <button class="tab-btn"><img src="{% static 'assets/img/testimonial/auth-6-3.jpg' %}" alt="thumbnail"></button>
+            </div>
+          </div>
+          <div class="col-lg-8 order-3 order-md-2 mt-4 mt-md-0 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="testi-style5">
+              <div id="testislide2">
+                <div class="slide-1">
+                  <div class="testi-body">
+                    <div class="testi-img"><img src="{% static 'assets/img/testimonial/auth-6-1.jpg' %}" alt="thumbnail"></div>
+                    <div class="testi-content">
+                      <span class="testi-degi">our properties</span>
+                      <h3 class="testi-name h4"><a href="properties.html">Real Estate</a></h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="slide-2">
+                  <div class="testi-body">
+                    <div class="testi-img"><img src="{% static 'assets/img/testimonial/auth-6-2.jpg' %}" alt="thumbnail"></div>
+                    <div class="testi-content">
+                      <span class="testi-degi">our properties</span>
+                      <h3 class="testi-name h4"><a href="properties.html">living environment</a></h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="slide-3">
+                  <div class="testi-body">
+                    <div class="testi-img"><img src="{% static 'assets/img/testimonial/auth-6-3.jpg' %}" alt="thumbnail"></div>
+                    <div class="testi-content">
+                      <span class="testi-degi">our properties</span>
+                      <h3 class="testi-name h4"><a href="properties.html">dynamic industry</a></h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="slide-3">
+                  <div class="testi-body">
+                    <div class="testi-img"><img src="{% static 'assets/img/testimonial/auth-6-4.jpg' %}" alt="thumbnail"></div>
+                    <div class="testi-content">
+                      <span class="testi-degi">our properties</span>
+                      <h3 class="testi-name h4"><a href="properties.html">Modern houses</a></h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 order-2 order-md-3 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="testi-nav nav-next">
+              <button class="tab-btn"><img src="{% static 'assets/img/testimonial/auth-6-1.jpg' %}" alt="thumbnail"></button>
+              <button class="tab-btn"><img src="{% static 'assets/img/testimonial/auth-6-2.jpg' %}" alt="thumbnail"></button>
+              <button class="tab-btn"><img src="{% static 'assets/img/testimonial/auth-6-3.jpg' %}" alt="thumbnail"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--==============================
+Properties Area
+==============================-->
+  <section class="space bg-theme2">
+    <div class="container">
+      <div class="title-area text-center wow fadeInUp wow-animated" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+        <h2 class="sec-title h1">Explore Good Places</h2>
+        <div class="sec-line">
+          <hr>
+        </div>
+        <span class="sec-subtitle">our properties for sale</span>
+      </div>
+      <div class="row justify-content-center mb-40">
+        <div class="col-auto">
+          <div class="filter-menu filter-menu-active">
+            <button class="vs-btn style3 small active" data-filter="*">BEST SALE</button>
+            <button class="vs-btn style3 small" data-filter=".apartment">APARTMENT</button>
+            <button class="vs-btn style3 small" data-filter=".renthouse">RENT HOUSE</button>
+            <button class="vs-btn style3 small" data-filter=".painthouse">PAINT HOUSE</button>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center filter-active filter-item1">
+        <div class="filter-item  col-sm-6 col-xl-4 apartment painthouse">
+          <div class="propertie-style1">
+            <div class="propertie-img">
+              <img src="{% static 'assets/img/properties/properties-1-1.jpg' %}" alt="member">
+              <a href="#" class="propertie-wishlist"><i class="fas fa-heart"></i></a>
+            </div>
+            <div class="propertie-content">
+              <h4 class="propertie-name h5"><a href="properties.html">Bluewhale Real Estate</a>
+              </h4>
+              <div class="propertie-meta">
+                <span><i class="fas fa-bed-alt"></i>3 beds</span>
+                <span><i class="fad fa-bath"></i> 2 baths</span>
+                <span><i class="far fa-euro-sign"></i> price: <span class="propertie-price"> $
+                  165</span></span>
+              </div>
+              <div class="propertie-bottom">
+                <a href="properties.html" class="mb-0">View Property </a>
+                <a href="properties.html" class="icon-btn style2"><i class="far fa-long-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="filter-item col-sm-6 col-xl-4 apartment renthouse">
+          <div class="propertie-style1">
+            <div class="propertie-img">
+              <img src="{% static 'assets/img/properties/properties-1-2.jpg' %}" alt="member">
+              <a href="#" class="propertie-wishlist"><i class="fas fa-heart"></i></a>
+            </div>
+            <div class="propertie-content">
+              <h4 class="propertie-name h5"><a href="properties.html">Agile Real Estate Group</a>
+              </h4>
+              <div class="propertie-meta">
+                <span><i class="fas fa-bed-alt"></i>3 beds</span>
+                <span><i class="fad fa-bath"></i> 3 baths</span>
+                <span><i class="far fa-euro-sign"></i> price: <span class="propertie-price"> $
+                  265</span></span>
+              </div>
+              <div class="propertie-bottom">
+                <a href="properties.html" class="mb-0">View Property </a>
+                <a href="properties.html" class="icon-btn style2"><i class="far fa-long-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="filter-item col-sm-6 col-xl-4 apartment">
+          <div class="propertie-style1">
+            <div class="propertie-img">
+              <img src="{% static 'assets/img/properties/properties-1-3.jpg' %}" alt="member">
+              <a href="#" class="propertie-wishlist"><i class="fas fa-heart"></i></a>
+            </div>
+            <div class="propertie-content">
+              <h4 class="propertie-name h5"><a href="properties.html">Apartment 1200 Sqft</a>
+              </h4>
+              <div class="propertie-meta">
+                <span><i class="fas fa-bed-alt"></i>3 beds</span>
+                <span><i class="fad fa-bath"></i> 2 baths</span>
+                <span><i class="far fa-euro-sign"></i> price: <span class="propertie-price"> $
+                  365</span></span>
+              </div>
+              <div class="propertie-bottom">
+                <a href="properties.html" class="mb-0">View Property </a>
+                <a href="properties.html" class="icon-btn style2"><i class="far fa-long-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="filter-item  col-sm-6 col-xl-4 apartment painthouse">
+          <div class="propertie-style1">
+            <div class="propertie-img">
+              <img src="{% static 'assets/img/properties/properties-1-4.jpg' %}" alt="member">
+              <a href="#" class="propertie-wishlist"><i class="fas fa-heart"></i></a>
+            </div>
+            <div class="propertie-content">
+              <h4 class="propertie-name h5"><a href="properties.html">Real Estate in Bluewhale</a>
+              </h4>
+              <div class="propertie-meta">
+                <span><i class="fas fa-bed-alt"></i>2 beds</span>
+                <span><i class="fad fa-bath"></i> 2 baths</span>
+                <span><i class="far fa-euro-sign"></i> price: <span class="propertie-price"> $
+                  115</span></span>
+              </div>
+              <div class="propertie-bottom">
+                <a href="properties.html" class="mb-0">View Property </a>
+                <a href="properties.html" class="icon-btn style2"><i class="far fa-long-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="filter-item col-sm-6 col-xl-4 apartment renthouse">
+          <div class="propertie-style1">
+            <div class="propertie-img">
+              <img src="{% static 'assets/img/properties/properties-1-5.jpg' %}" alt="member">
+              <a href="#" class="propertie-wishlist"><i class="fas fa-heart"></i></a>
+            </div>
+            <div class="propertie-content">
+              <h4 class="propertie-name h5"><a href="properties.html">Group Agile Real Estate</a>
+              </h4>
+              <div class="propertie-meta">
+                <span><i class="fas fa-bed-alt"></i>3 beds</span>
+                <span><i class="fad fa-bath"></i> 2 baths</span>
+                <span><i class="far fa-euro-sign"></i> price: <span class="propertie-price"> $
+                  195</span></span>
+              </div>
+              <div class="propertie-bottom">
+                <a href="properties.html" class="mb-0">View Property </a>
+                <a href="properties.html" class="icon-btn style2"><i class="far fa-long-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="filter-item col-sm-6 col-xl-4 apartment painthouse">
+          <div class="propertie-style1">
+            <div class="propertie-img">
+              <img src="{% static 'assets/img/properties/properties-1-3.jpg' %}" alt="member">
+              <a href="#" class="propertie-wishlist"><i class="fas fa-heart"></i></a>
+            </div>
+            <div class="propertie-content">
+              <h4 class="propertie-name h5"><a href="properties.html">1200 square feet of apartment</a>
+              </h4>
+              <div class="propertie-meta">
+                <span><i class="fas fa-bed-alt"></i>2 beds</span>
+                <span><i class="fad fa-bath"></i> 2 baths</span>
+                <span><i class="far fa-euro-sign"></i> price: <span class="propertie-price"> $
+                  105</span></span>
+              </div>
+              <div class="propertie-bottom">
+                <a href="properties.html" class="mb-0">View Property </a>
+                <a href="properties.html" class="icon-btn style2"><i class="far fa-long-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <a href="properties.html" class="vs-btn style3">More Properties</a>
+      </div>
+    </div>
+  </section>
+  <!--==============================
+Reviews Area
+==============================-->
+  <section class="reviews-wrap1">
+    <div class="reviews-shape1" style="background-image: url(assets/img/reviews/reviews-bg-1.jpg);">
+    </div>
+    <div class="row align-items-center">
+      <div class="col-xl-6">
+        <div class="reviews-inner">
+          <div class="title-area text-center wow fadeInUp wow-animated" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+            <h2 class="sec-title text-white  h1">Our Top Reviews</h2>
+            <div class="sec-line text-subTitle">
+              <hr>
+            </div>
+            <span class="sec-subtitle text-subTitle">happy customer reviews</span>
+          </div>
+          <div class="vs-carousel" data-dots="true" data-asnavfor="#reviews-slide2" id="reviews-slide1" data-slide-show="1">
+            <div class="review-style1">
+              <div class="review-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="review-text">
+                “ Lorem ipsum, or lipsum as it is sometimes known, is dummytext used in
+                laying out print, graphic or web designs. The passage is attributed to an
+                unknown typesetter in the 15th century who is thought to have scrambled ”
+              </p>
+              <h4 class="review-author h5">Rodja Hartmann</h4>
+              <div class="review-avater">
+                <img decoding="async" src="{% static 'assets/img/reviews/review-1-1.jpg' %}" alt="avater">
+              </div>
+            </div>
+            <div class="review-style1">
+              <div class="review-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="review-text">
+                “ Lorem ipsum, or lipsum as it is sometimes known, is dummytext used in
+                laying out print, graphic or web designs. The passage is attributed to an
+                unknown typesetter in the 15th century who is thought to have scrambled ”
+              </p>
+              <h4 class="review-author h5">alan walker</h4>
+              <div class="review-avater">
+                <img decoding="async" src="{% static 'assets/img/reviews/review-1-2.jpg' %}" alt="avater">
+              </div>
+            </div>
+            <div class="review-style1">
+              <div class="review-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="review-text">
+                “ Lorem ipsum, or lipsum as it is sometimes known, is dummytext used in
+                laying out print, graphic or web designs. The passage is attributed to an
+                unknown typesetter in the 15th century who is thought to have scrambled ”
+              </p>
+              <h4 class="review-author h5">Kishor Saha</h4>
+              <div class="review-avater">
+                <img decoding="async" src="{% static 'assets/img/reviews/review-1-3.jpg' %}" alt="avater">
+              </div>
+            </div>
+            <div class="review-style1">
+              <div class="review-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="review-text">
+                “ Lorem ipsum, or lipsum as it is sometimes known, is dummytext used in
+                laying out print, graphic or web designs. The passage is attributed to an
+                unknown typesetter in the 15th century who is thought to have scrambled ”
+              </p>
+              <h4 class="review-author h5">Masum Sakib</h4>
+              <div class="review-avater">
+                <img decoding="async" src="{% static 'assets/img/reviews/review-1-4.jpg' %}" alt="avater">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-6">
+        <div class="vs-carousel" data-dots="false" id="reviews-slide2" data-asnavfor="#reviews-slide1" data-slide-show="1" data-fade="true">
+          <div class="item1">
+            <img src="{% static 'assets/img/reviews/reviews-bg-2-1.jpg' %}" alt="reviews">
+          </div>
+          <div class="item1">
+            <img src="{% static 'assets/img/reviews/reviews-bg-2-2.jpg' %}" alt="reviews">
+          </div>
+          <div class="item1">
+            <img src="{% static 'assets/img/reviews/reviews-bg-2-1.jpg' %}" alt="reviews">
+          </div>
+          <div class="item1">
+            <img src="{% static 'assets/img/reviews/reviews-bg-2-2.jpg' %}" alt="reviews">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--==============================
+Agents Area
+==============================-->
+  <section class="space-top space-extra-bottom bg-theme2">
+    <div class="container">
+      <div class="title-area text-center wow fadeInUp wow-animated" data-wow-delay="0.3s">
+        <h2 class="sec-title h1">meet our agents</h2>
+        <div class="sec-line">
+          <hr>
+        </div>
+        <span class="sec-subtitle">our top propertie saler</span>
+      </div>
+      <div class="row vs-carousel" data-arrows="true" data-wow-delay="0.4s" data-slide-show="4" data-lg-slide-show="3" data-md-slide-show="2" data-center-mode="true" data-xl-center-mode="true" data-ml-center-mode="true" data-lg-center-mode="true" data-md-center-mode="true" data-sm-center-mode="true">
+        <div class="col-xl-3">
+          <div class="team-style1">
+            <div class="team-img">
+              <img src="{% static 'assets/img/team/team-1-1.png' %}" alt="teacher" class="w-100">
+            </div>
+            <div class="team-content">
+              <p class="team-degi">propertie Dealer</p>
+              <h4 class="team-title">
+                <a href="agent-details.html">Alexander Arnold</a>
+              </h4>
+              <a href="agent-details.html" class="icon-btn"> <i class="far fa-long-arrow-right"></i> </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <div class="team-style1">
+            <div class="team-img">
+              <img class="w-100" src="{% static 'assets/img/team/team-1-2.png' %}" alt="teacher">
+            </div>
+            <div class="team-content">
+              <p class="team-degi">executive seller</p>
+              <h4 class="team-title">
+                <a href="agent-details.html">Emilia Clarke</a>
+              </h4>
+              <a href="agent-details.html" class="icon-btn"> <i class="far fa-long-arrow-right"></i> </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <div class="team-style1">
+            <div class="team-img">
+              <img class="w-100" src="{% static 'assets/img/team/team-1-3.png' %}" alt="teacher">
+            </div>
+            <div class="team-content">
+              <p class="team-degi">propertie Dealer</p>
+              <h4 class="team-title">
+                <a href="agent-details.html">Sk Saha</a>
+              </h4>
+              <a href="agent-details.html" class="icon-btn"> <i class="far fa-long-arrow-right"></i> </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <div class="team-style1">
+            <div class="team-img">
+              <img class="w-100" src="{% static 'assets/img/team/team-1-4.png' %}" alt="teacher">
+            </div>
+            <div class="team-content">
+              <p class="team-degi">propertie Dealer</p>
+              <h4 class="team-title">
+                <a href="agent-details.html">Arnold Alexander</a>
+              </h4>
+              <a href="agent-details.html" class="icon-btn"> <i class="far fa-long-arrow-right"></i> </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <div class="team-style1">
+            <div class="team-img">
+              <img src="{% static 'assets/img/team/team-1-5.png' %}" alt="teacher" class="w-100">
+            </div>
+            <div class="team-content">
+              <p class="team-degi">propertie Dealer</p>
+              <h4 class="team-title">
+                <a href="agent-details.html">Alexander Arnold</a>
+              </h4>
+              <a href="agent-details.html" class="icon-btn"> <i class="far fa-long-arrow-right"></i> </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <div class="team-style1">
+            <div class="team-img">
+              <img class="w-100" src="{% static 'assets/img/team/team-1-6.png' %}" alt="teacher">
+            </div>
+            <div class="team-content">
+              <p class="team-degi">propertie Dealer</p>
+              <h4 class="team-title">
+                <a href="agent-details.html">Masum Sakib</a>
+              </h4>
+              <a href="agent-details.html" class="icon-btn"> <i class="far fa-long-arrow-right"></i> </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <div class="team-style1">
+            <div class="team-img">
+              <img class="w-100" src="{% static 'assets/img/team/team-1-7.png' %}" alt="teacher">
+            </div>
+            <div class="team-content">
+              <p class="team-degi">propertie Dealer</p>
+              <h4 class="team-title">
+                <a href="agent-details.html">Rodja Arnold</a>
+              </h4>
+              <a href="agent-details.html" class="icon-btn"> <i class="far fa-long-arrow-right"></i> </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <div class="team-style1">
+            <div class="team-img">
+              <img class="w-100" src="{% static 'assets/img/team/team-1-8.png' %}" alt="teacher">
+            </div>
+            <div class="team-content">
+              <p class="team-degi">web developer</p>
+              <h4 class="team-title">
+                <a href="agent-details.html">Kishor saha</a>
+              </h4>
+              <a href="agent-details.html" class="icon-btn"> <i class="far fa-long-arrow-right"></i> </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--==============================
+Cta Area
+==============================-->
+  <section class="text-center space" data-bg-src="{% static 'assets/img/bg/quote-bg.jpg' %}">
+    <div class="d-inline-flex mb-4 pb-1">
+      <div class="style2">
+        <a href="about.html" class="btn-icon">
+          <img src="{% static 'assets/img/hero-logo.png' %}" alt="">
+        </a>
+      </div>
+    </div>
+    <h2 class="sec-title3 text-white text-uppercase mb-4 pb-2">Get a Free Quote</h2>
+    <div class="d-inline-flex flex-wrap justify-content-center gap-3 align-items-center">
+      <a href="appointment.html" class="vs-btn style2 bg2">appointment</a>
+      <a href="tel:+4412589634" class="vs-btn style4">
+        <i class="fal fa-headset"></i>make a call</a>
+    </div>
+  </section>
+  <!--==============================
+News Area
+==============================-->
+  <section class="space space-extra-bottom bg-theme2">
+    <div class="container">
+      <div class="title-area text-center wow fadeInUp wow-animated" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+        <h2 class="sec-title h1">our Leatest News</h2>
+        <div class="sec-line">
+          <hr>
+        </div>
+        <span class="sec-subtitle">our News Feeds</span>
+      </div>
+      <div class="row vs-carousel" data-arrows="true" data-wow-delay="0.4s" data-slide-show="3" data-lg-slide-show="3" data-md-slide-show="2" data-center-mode="true" data-xl-center-mode="true" data-ml-center-mode="true" data-lg-center-mode="true" data-md-center-mode="true" data-sm-center-mode="true">
+        <div class="col-xl-4">
+          <div class="vs-blog blog-style1">
+            <div class="blog-img mega-hover">
+              <a href="blog-details.html">
+                <img src="{% static 'assets/img/blog/blog-2-1.jpg' %}" alt="Blog Thumbnail" class="w-100">
+              </a>
+              <a href="blog.html" class="blog-date">
+                <span class="day">11</span>
+                <span class="month">mar</span>
+              </a>
+            </div>
+            <div class="blog-meta">
+              <a href="blog.html"> <i class="far fa-user"></i> Jon Smith </a>
+              <a href="blog.html"> <i class="far fa-copy"></i> Real Estate </a>
+            </div>
+            <div class="blog-content">
+              <h3 class="blog-title h5">
+                <a href="blog-details.html">Bluewhale Real Estate</a>
+              </h3>
+              <p class="blog-text">
+                People work for us in more than 70 countries over the This breadth of global.
+              </p>
+              <a href="blog-details.html" class="icon-btn style2"> <i class="far fa-long-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4">
+          <div class="vs-blog blog-style1">
+            <div class="blog-img mega-hover">
+              <a href="blog-details.html">
+                <img src="{% static 'assets/img/blog/blog-2-2.jpg' %}" alt="Blog Thumbnail" class="w-100">
+              </a>
+              <a href="blog.html" class="blog-date">
+                <span class="day">10</span>
+                <span class="month">mar</span>
+              </a>
+            </div>
+            <div class="blog-meta">
+              <a href="blog.html"> <i class="far fa-user"></i> Jon Smith </a>
+              <a href="blog.html"> <i class="far fa-copy"></i> Real Estate </a>
+            </div>
+            <div class="blog-content">
+              <h3 class="blog-title h5">
+                <a href="blog-details.html">Full Travel Guide for Estate</a>
+              </h3>
+              <p class="blog-text">
+                People work for us in more than 60 countries over the This breadth of global.
+              </p>
+              <a href="blog-details.html" class="icon-btn style2"> <i class="far fa-long-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4">
+          <div class="vs-blog blog-style1">
+            <div class="blog-img mega-hover">
+              <a href="blog-details.html">
+                <img src="{% static 'assets/img/blog/blog-2-3.jpg' %}" alt="Blog Thumbnail" class="w-100">
+              </a>
+              <a href="blog.html" class="blog-date">
+                <span class="day">13</span>
+                <span class="month">mar</span>
+              </a>
+            </div>
+            <div class="blog-meta">
+              <a href="blog.html"> <i class="far fa-user"></i> Jon Smith </a>
+              <a href="blog.html"> <i class="far fa-copy"></i> Real Estate </a>
+            </div>
+            <div class="blog-content">
+              <h3 class="blog-title h5">
+                <a href="blog-details.html">Diamond Manor Apartment</a>
+              </h3>
+              <p class="blog-text">
+                People work for us in more than 90 countries over the This breadth of global.
+              </p>
+              <a href="blog-details.html" class="icon-btn style2"> <i class="far fa-long-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4">
+          <div class="vs-blog blog-style1">
+            <div class="blog-img mega-hover">
+              <a href="blog-details.html">
+                <img src="{% static 'assets/img/blog/blog-2-4.jpg' %}" alt="Blog Thumbnail" class="w-100">
+              </a>
+              <a href="blog.html" class="blog-date">
+                <span class="day">16</span>
+                <span class="month">mar</span>
+              </a>
+            </div>
+            <div class="blog-meta">
+              <a href="blog.html"> <i class="far fa-user"></i> Jon Smith </a>
+              <a href="blog.html"> <i class="far fa-copy"></i> Real Estate </a>
+            </div>
+            <div class="blog-content">
+              <h3 class="blog-title h5">
+                <a href="blog-details.html">EliteView Residences</a>
+              </h3>
+              <p class="blog-text">
+                People work for us in more than 60 countries over the This breadth of global.
+              </p>
+              <a href="blog-details.html" class="icon-btn style2"> <i class="far fa-long-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--==============================
+Subscribe Area
+==============================-->
+  <section class="bg-secondary space-extra overflow-hidden">
+    <div class="vs-container1">
+      <div class="row gx-0 align-items-center justify-content-between">
+        <div class="col-xl-auto">
+          <h2 class="sec-title4 h1">Subscribe to newsletter.</h2>
+          <p class="sec-text mb-0">our properties for sale</p>
+        </div>
+        <div class="col-xl-auto">
+          <form action="mail.php" class="form-style2 ajax-contact" mathod="POST">
+            <div class="form-group">
+              <input type="text" placeholder="Enter your email address....">
+              <button class="vs-btn">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
