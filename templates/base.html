@@ -146,25 +146,15 @@
                         <li class="menu-item">
                           <a href="/">Home</a>
                         </li>
-                        <li class="menu-item-has-children">
-                          <a href="properties.html">Properties</a>
-                          <ul class="sub-menu">
-                            <li><a href="properties.html">Properties List</a></li>
-                            <li><a href="properties-details.html">Properties Details</a></li>
-                          </ul>
+                        <li class="menu-item">
+                          <a href="{% url 'all_properties_view' %}">Properties</a>
                         </li>
                         <li class="menu-item">
-                          <a href="agents.html">AGENTS</a>
+                          <a href="{% url 'about' %}">About US</a>
                         </li>
-                        <li class="menu-item-has-children">
-                          <a href="blog.html">BLOG</a>
-                          <ul class="sub-menu">
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="blog-details.html">Blog Details</a></li>
-                          </ul>
-                        </li>
+                      
                         <li class="menu-item">
-                          <a href="contact.html">Contact</a>
+                          <a href="{% url 'contact' %}" >Contact</a>
                         </li>
                       </ul>
                     </nav>
@@ -207,11 +197,10 @@ Footer Area
                   <div class="vs-widget-about">
                     <p class="footer-address3"><i class="far fa-map-marker-alt"></i> WE7
                       Center Park Land Road, New York</p>
-                    <p class="footer-address3"><a class="text-inherit" href="tel:++11234562228"><i
-                                                class="far fa-phone-alt"></i> +1 123 456
-                        2228 </a></p>
-                    <p class="footer-address3"><a class="text-inherit" href="mailto:info@example.com"><i
-                                                class="far fa-envelope"></i> info@example.com</a></p>
+                    <p class="footer-address3"><a class="text-inherit" href="tel:+918012028"><i
+                                                class="far fa-phone-alt"></i> +918012028</a></p>
+                    <p class="footer-address3"><a class="text-inherit" href="mailto:nexthm.re@gmail.com"><i
+                                                class="far fa-envelope"></i> nexthm.re@gmail.com</a></p>
                   </div>
                 </div>
                 <div class="section-line text-border d-none d-xl-block">
@@ -279,20 +268,21 @@ Footer Area
             </div>
           </div>
           <div class="col-xl-auto col-12">
-            <form action="mail.php" class="form-style5 ajax-contact" method="POST">
+            <form action="{% url 'index' %}" class="form-style5 ajax-contact" method="POST">
+              {% csrf_token %}
               <h3 class="mb-0 form-title text-white text-uppercase">Contact us</h3>
               <div class="row gx-20">
                 <div class="col-md-12 form-group">
-                  <input type="text" placeholder="Your Name *">
+                  <input type="text" placeholder="Your Name *" name="name">
                 </div>
                 <div class="col-md-12 form-group">
-                  <input type="email" placeholder="your Email *">
+                  <input type="email" placeholder="your Email *"name="email">
                 </div>
                 <div class="col-md-12 form-group mb-0">
-                  <textarea placeholder="Massage"></textarea>
+                  <textarea placeholder="Massage" name="message"></textarea>
                 </div>
                 <div class="col-12">
-                  <button class="vs-btn">Submit Now</button>
+                  <button type="submit" class="vs-btn">Submit Now</button>
                 </div>
               </div>
             </form>

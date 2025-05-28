@@ -1,0 +1,308 @@
+{% extends base_template %}
+{% load static %}
+
+{% block content %}
+
+<!-- Full Background with Gradient Overlay -->
+<div class="chat-page-wrapper" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('{% static 'assets/img/bg/hero-bg-1-3.jpg' %}') no-repeat center center fixed; background-size: cover;">
+<br>
+<br>
+  <!-- Main Content Container -->
+  <div class="container flex-grow-1 py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10">
+        
+        <!-- Glassmorphism Chat Container -->
+        <div class="glass-chat-container">
+          
+          <!-- Chat Header -->
+          <div class="chat-header">
+            <div class="back-button">
+              <a href="javascript:history.back()" class="btn btn-glass">
+                <i class="fas fa-arrow-left"></i>
+              </a>
+            </div>
+            <div class="chat-title">
+              <h2>Property Chat with <span class="highlight-user">{{ chat_user.username }}</span></h2>
+            </div>
+          </div>
+          
+          <!-- Messages Container -->
+          <div class="messages-container" id="chat-box">
+            {% for msg in messages %}
+            <div class="message {% if msg.sender == request.user %}sent{% else %}received{% endif %}">
+              <div class="message-content">
+                <div class="message-bubble">
+                  <p>{{ msg.message }}</p>
+                  <span class="message-time">{{ msg.timestamp|date:"M d, Y - H:i" }}</span>
+                </div>
+                <span class="message-sender">{{ msg.sender.username }}</span>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          
+          <!-- Message Input Form -->
+          <form class="message-form" id="chat-form">
+            {% csrf_token %}
+            <input type="hidden" id="property_id" value="{{ property.id }}">
+            <input type="hidden" id="receiver_id" value="{{ chat_user.id }}">
+            <div class="input-group">
+              <input type="text" id="chat-message" class="form-control glass-input" placeholder="Type your message..." required>
+              <button type="submit" class="btn btn-primary send-btn">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </form>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer Spacer -->
+  <div class="mt-auto"></div>
+</div>
+
+<style>
+  /* Glassmorphism Effect */
+  .glass-chat-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+  }
+  
+  .btn-glass {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+  }
+  
+  .glass-input {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: white !important;
+  }
+  
+  .glass-input::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+  
+  /* Chat Layout */
+  .chat-header {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .back-button {
+    margin-right: 15px;
+  }
+  
+  .chat-title h2 {
+    color: white;
+    font-size: 1.3rem;
+    margin: 0;
+    font-weight: 500;
+  }
+  
+  .highlight-user {
+    color: #64f5d2;
+    font-weight: 600;
+  }
+  
+  .messages-container {
+    padding: 20px;
+    height: 400px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Message Styling */
+  .message {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+  }
+  
+  .message.sent {
+    align-self: flex-end;
+    align-items: flex-end;
+  }
+  
+  .message.received {
+    align-self: flex-start;
+    align-items: flex-start;
+  }
+  
+  .message-bubble {
+    padding: 12px 15px;
+    border-radius: 18px;
+    position: relative;
+    margin-bottom: 5px;
+  }
+  
+  .message.sent .message-bubble {
+    background: linear-gradient(135deg, #64b5f6, #42a5f5);
+    color: white;
+    border-bottom-right-radius: 5px;
+  }
+  
+  .message.received .message-bubble {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    border-bottom-left-radius: 5px;
+  }
+  
+  .message-time {
+    font-size: 0.7rem;
+    opacity: 0.8;
+    margin-top: 5px;
+    display: block;
+  }
+  
+  .message.sent .message-time {
+    text-align: right;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .message.received .message-time {
+    text-align: left;
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .message-sender {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .message.received .message-sender {
+    color: rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Message Form */
+  .message-form {
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .input-group {
+    display: flex;
+  }
+  
+  .send-btn {
+    border-radius: 0 10px 10px 0 !important;
+    padding: 0 20px;
+  }
+  
+  /* Scrollbar Styling */
+  .messages-container::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .messages-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .messages-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .messages-container {
+      height: 60vh;
+      padding: 15px;
+    }
+    
+    .message {
+      max-width: 90%;
+    }
+    
+    .chat-title h2 {
+      font-size: 1.1rem;
+    }
+  }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const chatBox = document.getElementById("chat-box");
+    const chatForm = document.getElementById("chat-form");
+    const messageInput = document.getElementById("chat-message");
+    const propertyIdInput = document.getElementById("property_id");
+    const receiverIdInput = document.getElementById("receiver_id");
+
+    // Auto-scroll to bottom
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    chatForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const message = messageInput.value.trim();
+        const propertyId = propertyIdInput.value;
+        const receiverId = receiverIdInput.value;
+
+        if (message === "") return;
+
+        fetch("{% url 'accounts:send_message' %}", {
+            method: "POST",
+            headers: {
+                "X-CSRFToken": "{{ csrf_token }}",
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: `property_id=${propertyId}&message=${encodeURIComponent(message)}&receiver_id=${receiverId}`
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "Message sent") {
+                // Create new message element
+                const messageDiv = document.createElement("div");
+                messageDiv.className = "message sent";
+                
+                const contentDiv = document.createElement("div");
+                contentDiv.className = "message-content";
+                
+                const bubbleDiv = document.createElement("div");
+                bubbleDiv.className = "message-bubble";
+                
+                const messageP = document.createElement("p");
+                messageP.textContent = data.message;
+                
+                const timeSpan = document.createElement("span");
+                timeSpan.className = "message-time";
+                const now = new Date();
+                timeSpan.textContent = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+                
+                const senderSpan = document.createElement("span");
+                senderSpan.className = "message-sender";
+                senderSpan.textContent = data.user;
+                
+                bubbleDiv.appendChild(messageP);
+                bubbleDiv.appendChild(timeSpan);
+                contentDiv.appendChild(bubbleDiv);
+                contentDiv.appendChild(senderSpan);
+                messageDiv.appendChild(contentDiv);
+                
+                chatBox.appendChild(messageDiv);
+                messageInput.value = "";
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
+        })
+        .catch(error => console.error("Error:", error));
+    });
+});
+</script>
+
+{% endblock %}

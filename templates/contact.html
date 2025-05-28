@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <!--==============================
+    Breadcumb
+    ============================== -->
+  <div class="breadcumb-wrapper " data-bg-src="{% static 'assets/img/breadcrumb/breadcrumb-1-1.jpg' %}">
+    <div class="container z-index-common">
+      <div class="breadcumb-content">
+        <div>
+          <img src="{% static 'assets/img/breadcrumb/breadcrumb-1-2.png' %}" alt="logo">
+          <h1 class="breadcumb-title">Contact us</h1>
+        </div>
+        <div class="breadcumb-menu-wrap">
+          <ul class="breadcumb-menu">
+            <li><a href="/">Home</a></li>
+            <li>Contact us</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--==============================
+  Contact Area
+==============================-->
+  <section class="space-top space-extra-bottom bg-theme2">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-xl-6">
+          <h2 class="border-title2 h1">Get in touch with us</h2>
+          <p class="mb-0 fs-xs fw-medium">Have questions or need assistance? We're here to help!
+          Contact us today, and we'll get back to you as soon as possible.</p>
+          <div class="d-flex align-items-center mt-5 mb-30">
+            <div class="icon-btn3">
+              <img src="{% static 'assets/img/service/service-icon-2.svg' %}" alt="category-icon">
+            </div>
+            <div>
+              <h3 class="h5 mb-2">Our Location</h3>
+              <p class="mb-0 fs-xs fw-medium">999 WS, Park Lan stary jonson Road <br>
+              Queence, New York</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-center mt-5 mb-30">
+            <div class="icon-btn3">
+              <img src="{% static 'assets/img/contact/phone-1.svg' %}" alt="category-icon">
+            </div>
+            <div>
+              <h3 class="h5 mb-2">Phone Number</h3>
+              <p class="mb-0 fs-xs fw-medium">
+                <a href="#">PHONE : +91 8012028
+                </a>
+              </p>
+            </div>
+          </div>
+          <div class="d-flex align-items-center mt-5 mb-30">
+            <div class="icon-btn3">
+              <img src="{% static 'assets/img/contact/map.svg' %}" alt="category-icon">
+            </div>
+            <div>
+              <h3 class="h5 mb-2">Our Location</h3>
+              <p class="mb-0 fs-xs fw-medium">
+                <a href="#">nexthm.re@gmail.com</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 gx-70 wow fadeInUp" data-wow-delay="0.4s">
+          {% if success %}
+          <div class="alert alert-success" role="alert">
+              Your message has been successfully submitted!
+          </div>
+          {% endif %}
+          <form class="form-style4 bg-title" action="{% url 'contact' %}" method="POST">
+            {% csrf_token %}
+            <div class="form-title">
+              <h3 class="sec-title2 h1">Leave a message</h3>
+            </div>
+            <div class="row gx-20">
+              <div class="col-md-12 form-group">
+                <label for="name">Your Name *</label>
+                <input name="name" type="text">
+              </div>
+              <div class="col-md-12 form-group">
+                <label for="email">Your Email</label>
+                <input name="email" type="email">
+              </div>
+              <div class="col-md-12 form-group">
+                <label for="message">Your Enquiry</label>
+                <textarea name="message"></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="vs-btn">Submit Enquiry</button>
+              </div>
+            </div>
+            <p class="form-messages mb-0 mt-3"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--==============================
+Map Area
+==============================-->
+  <div class="overflow-hidden rounded-20 space-bottom bg-theme2">
+    <div class="container">
+      <iframe class="bdrs20" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d50437.32487690385!2d144.96230200000002!3d-37.805673!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2sbd!4v1677062621439!5m2!1sen!2sbd" width="600" height="588" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+{% endblock %}

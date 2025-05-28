@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block content %}
+<br><br>
+<!-- Carousel Start -->
+<div class="header-carousel-fluid">
+    <div id="carouselId" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
+            <li data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="Second slide"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <!-- Carousel Item with Blue Fade -->
+            <div class="carousel-item active position-relative">
+                <img src="{% static 'img/fact-bg.jpg' %}" class="img-fluid w-100" style="height: 700px; width: 100%; object-fit: cover;" alt="First slide" />
+
+                <!-- Blue fade overlay using inline style -->
+                <div style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(180deg, rgba(0, 0, 255, 0.5) 0%, rgba(0, 0, 255, 0.2) 50%, rgba(0, 0, 255, 0) 100%);
+                    z-index: 1;
+                    pointer-events: none;">
+                </div>
+
+                <!-- Centered Form Container with Spacing Adjustments -->
+                <div class="carousel-caption d-flex justify-content-center align-items-center" style="z-index: 2; padding-top: 40px; padding-bottom: 40px;">
+                    <div class="container py-4" style="max-width: 80%;">
+                        <div class="row g-5 justify-content-center">
+                            <div class="col-lg-7 col-md-9">
+                                <!-- Form Background Styling -->
+                                <div class="bg-secondary text-center fadeInLeft animated"
+                                     style="background: rgba(0, 0, 0, 0.75); padding: 20px 50px 40px 20px;" 
+                                     data-animation="fadeInLeft" 
+                                     data-delay="1s">
+                                    <h3 class="display-6" style="color:white; margin-top: 10px; margin-bottom: 0px;">
+                                        <img src="{% static 'img/wedding-car.png' %}" alt="Car Icon" style="width: 60px; height: auto; margin-right: 10px;">
+                                        Contact Us
+                                    </h3>
+                                    <br>
+                                    <br>
+                                    <form method="post" action="">
+                                        {% csrf_token %}
+                                        <div class="col-10 col-lg-6" style="margin-left: 90px;">
+                                            <table class="table table-borderless align-center">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-right">{{ form.content.label_tag }}</td>
+                                                        <td>{{ form.content }}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        {% if form.errors or form.non_field_errors %}
+                                            <div class="mb-3 p-6 bg-red-100 rounded-xl">
+                                                {% for field in form %}
+                                                    {{ field.errors }}
+                                                {% endfor %}
+                                                {{ form.non_field_errors }}
+                                            </div>
+                                        {% endif %}
+                                        <br>
+                                        <button type="submit" class="btn btn-outline-light btn-lg">Send</button>
+                                        <br>
+                                    </form>
+                                </div>
+                            </div> <!-- End of Form Container -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Carousel End -->
+<br><br>
+{% endblock content %}

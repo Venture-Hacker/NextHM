@@ -1,13 +1,20 @@
-from django.shortcuts import render, redirect
-# from .models import Property
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Property
 from .forms import PropertyForm
 from django.contrib import messages
 
 # Create your views here.
 
-# def property_list(request):
-#     properties = Property.objects.filter(agent=request.user)
-#     return render(request, 'property_list.html', {'properties': properties})
+def agent_property_list(request):
+    if request.method == 'POST' and 'delete' in request.GET:
+        property_id = request.GET.get('delete')
+        property = get_object_or_404(Property, id=property_id, agent=request.user)
+        property.delete()
+        messages.success(request, "Property deleted successfully!")
+        return redirect('property:agent_property_list')
+
+    properties = Property.objects.filter(agent=request.user)
+    return render(request, 'agent_property_list.html', {'properties': properties})
 
 def add_property(request):
     if request.method == 'POST':
@@ -25,3 +32,4 @@ def add_property(request):
         form = PropertyForm()
 
     return render(request, 'add_property.html', {'form': form})
+

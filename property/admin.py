@@ -3,7 +3,7 @@ from .models import Property, Feature
 from django.contrib.auth.models import User
 
 class PropertyAdmin(admin.ModelAdmin):
-    list_display = ('title', 'location', 'starting_price', 'category', 'num_beds', 'num_bathrooms', 'agent')
+    list_display = ('property_id','title', 'location', 'starting_price', 'category', 'num_beds', 'num_bathrooms', 'agent')
     search_fields = ('title', 'location', 'category', 'agent__username')
     list_filter = ('category',)  # Keep only category here; we'll handle agents differently below.
 

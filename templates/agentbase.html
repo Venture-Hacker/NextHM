@@ -145,23 +145,248 @@
                     <nav class="main-menu menu-style1 d-none d-lg-block">
                       <ul>
                         <li class="menu-item">
-                          <a href="/">Home</a>
+                          <a href="{% url 'accounts:agent_dashboard' %}">Dashboard</a>
                         </li>
                         <li class="menu-item-has-children">
-                          <a href="properties.html">Properties</a>
+                          <a href="{% url 'property:agent_property_list' %}">Properties</a>
                           <ul class="sub-menu">
-                            <li><a href="properties.html">Properties List</a></li>
+                            <li><a href="{% url 'property:agent_property_list' %}">Properties List</a></li>
                             <li><a href="{% url 'property:add_property' %}">Add Property</a></li>
                           </ul>
                         </li>
                         <li class="menu-item">
-                          <a href="agents.html">MESSAGES</a>
+                          <a href="#" onclick="openChatModal()"> 
+                            Messages
+                          </a>
+                        </li>
+                         
+            <!--CHAT overlay STARTS HERE-->
+            <div id="chatModal" class="modal-overlay modern-2099">
+              <div class="modal-content">
+                  <button class="close-btn" onclick="closeChatModal()">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                          <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z" clip-rule="evenodd" />
+                      </svg>
+                  </button>
+                  <h2>Select Chat</h2>
+                  <ul class="chat-options"><center>
+                    {% for prop in properties_with_chats %}
+                    <li>
+                        <a href="{% url 'accounts:chat_view' prop.id %}">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M4.804 21.607A6.75 6.75 0 0012 22.5a6.75 6.75 0 007.196-1.193l-2.433-2.433a5.25 5.25 0 01-7.123 0l-2.433 2.433zM6 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM12 15a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM18 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                            Chat for Property: {{ prop.property_id  }}
+                        </a>
+                    </li>
+                {% endfor %}
+                
+                {% if not properties_with_chats %}
+                    <li class="no-chats">No active chats available.</li>
+                {% endif %}
+                  </ul></center>
+              </div>
+          </div>
+          <script>
+          function openChatModal() {
+              document.getElementById("chatModal").style.display = "flex"; /* Changed to flex for better centering */
+          }
+          
+          function closeChatModal() {
+              document.getElementById("chatModal").style.display = "none";
+          }
+          </script>
+          <style>
+          .modal-overlay {
+              display: none;
+              position: fixed;
+              z-index: 1000;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              background: rgba(30, 35, 45, 0.85); /* Darker, translucent background */
+              justify-content: center; /* Center horizontally */
+              align-items: center; /* Center vertically */
+              backdrop-filter: blur(10px); /* Modern blur effect */
+          }
+          
+          .modal-content {
+              background: #1e232d; /* Dark background for content */
+              color: #d4d7de; /* Light text color */
+              padding: 30px;
+              border-radius: 16px; /* More rounded corners */
+              width: 90%;
+              max-width: 600px; /* Slightly wider max-width */
+              position: relative;
+              box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); /* Deeper shadow */
+              transform: translateY(-20px); /* Subtle entrance animation */
+              opacity: 0;
+              animation: fadeIn 0.3s ease-out forwards;
+          }
+          
+          @keyframes fadeIn {
+              to {
+                  opacity: 1;
+                  transform: translateY(0);
+              }
+          }
+          
+          .close-btn {
+              position: absolute;
+              top: 10px;
+              right: 15px;
+              background: none;
+              border: none;
+              padding: 8px;
+              cursor: pointer;
+              color: #a6adb4;
+              font-size: 20px;
+              transition: color 0.2s ease-in-out;
+          }
+          
+          .close-btn:hover {
+              color: #f4f4f4;
+          }
+          
+          .close-btn svg {
+              display: block;
+              width: 20px;
+              height: 20px;
+          }
+          
+          h2 {
+              color: #f4f4f4;
+              margin-top: 0;
+              margin-bottom: 20px;
+              font-size: 24px;
+              text-align: center;
+              letter-spacing: 0.5px;
+          }
+          
+          .chat-options {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              
+          }
+          
+          .chat-options li {
+              margin-bottom: 15px;
+              border-radius: 8px;
+              overflow: hidden;
+              transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+              justify-content: center;
+        
+          }
+          
+          .chat-options li:last-child {
+              margin-bottom: 0;
+          }
+          
+          .chat-options li a {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              text-decoration: none;
+              color: #d4d7de;
+              padding: 15px 20px;
+              background-color: #2c323d;
+              transition: background-color 0.2s ease-in-out;
+          }
+          
+          .chat-options li a:hover {
+              background-color: #3a414e;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+              transform: translateY(-2px);
+          }
+          
+          .chat-options li a .icon svg {
+              width: 20px;
+              height: 20px;
+              fill: #a6adb4;
+          }
+          
+          .chat-options li a:hover .icon svg {
+              fill: #f4f4f4;
+          }
+          
+          .chat-options .no-chats {
+              color: #a6adb4;
+              font-style: italic;
+              padding: 15px 20px;
+              text-align: center;
+          }
+          
+          /* Modern 2099 Styling Enhancements */
+          .modal-overlay.modern-2099 {
+              /* Add futuristic background patterns or gradients if desired */
+              /* Example: background: linear-gradient(135deg, #2c3e50, #000000); */
+          }
+          
+          .modal-content.modern-2099 {
+              border: 1px solid #34495e; /* Subtle border */
+          }
+          
+          .close-btn.modern-2099 {
+              /* More stylized close button */
+              background-color: rgba(0, 0, 0, 0.1);
+              border-radius: 50%;
+              padding: 6px;
+          }
+          
+          .close-btn.modern-2099:hover {
+              background-color: rgba(0, 0, 0, 0.2);
+          }
+          
+          h2.modern-2099 {
+              font-family: sans-serif; /* A more modern, clean font */
+              font-weight: 600;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              border-bottom: 2px solid #4b6584;
+              padding-bottom: 10px;
+              margin-bottom: 25px;
+          }
+          
+          .chat-options.modern-2099 li a {
+              border-left: 3px solid transparent;
+              transition: border-left-color 0.2s ease-in-out, background-color 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+          }
+          
+          .chat-options.modern-2099 li a:hover {
+              border-left-color: #00bcd4; /* Accent color on hover */
+              background-color: #34495e;
+              transform: translateX(5px);
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+          }
+          
+          .chat-options.modern-2099 li a .icon svg {
+              fill: #4b6584;
+              transition: fill 0.2s ease-in-out;
+          }
+          
+          .chat-options.modern-2099 li a:hover .icon svg {
+              fill: #00bcd4;
+          }
+          
+          .chat-options.modern-2099 .no-chats {
+              color: #6c7a89;
+          }
+          </style>
+
+                  <!--CHAT overlay ENDS HERE-->      
+                        
+                        
+
+                        
+                        <li class="menu-item">
+                          <a href="{% url 'accounts:agent_transactions' %}">HISTORY</a>
                         </li>
                         <li class="menu-item">
-                          <a href="blog.html">HISTORY</a>
-                        </li>
-                        <li class="menu-item">
-                          <a href="contact.html">PROFILE</a>
+                          <a href="{% url 'accounts:update_agent_profile' %}">PROFILE</a>
                         </li>
                       </ul>
                     </nav>

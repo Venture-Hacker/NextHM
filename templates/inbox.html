@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block inbox %}active{% endblock inbox %}
+{% block content %}
+ 
+
+<br><br>
+<center>
+
+    <div class="col-12 col-xl-8 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="p-5 rounded" style="background-color: #E4E0E1;"> <!-- Set container background color to gray -->
+            {% if conversations %}
+                {% for conversation in conversations %}
+                    <div class="rounded p-0 mb-4" style="background-color: #D3D3D3;">
+                        <a href="{% url 'conversation:detail' conversation.id %}">
+                            <div class="d-flex align-items-center bg-white rounded p-3 mb-3">
+                                <!-- Adjusted Image Size -->
+                                <div class="me-3">
+                                    <img src="{{ conversation.item.image.url }}" style="width: 50px; height: 60px; object-fit: cover;" class="rounded" alt="">
+                                </div>
+                                <!-- Text Content -->
+                                <div>
+                                    {% for member in conversation.members.all %}
+                                        {% if member != request.user %}
+                                            <p class="mb-1" style="color: black;"><strong>{{ member.username }}</strong> | {{ conversation.modified_at }}</p> <!-- Set text color to black -->
+                                            <p class="text-muted mb-0" style="color: black;">{{ conversation.item.name }}</p> <!-- Set text color to black -->
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p style="color:white;">No conversations yet!</p>
+            {% endif %}
+        </div>
+    </div>
+    
+</center>
+    
+    </html>
+{% endblock content %}

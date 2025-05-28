@@ -147,27 +147,16 @@
                     <nav class="main-menu menu-style1 d-none d-lg-block">
                       <ul>
                         <li class="menu-item">
-                          <a href="/">Home</a>
-                        </li>
-                        <li class="menu-item-has-children">
-                          <a href="properties.html">Properties</a>
-                          <ul class="sub-menu">
-                            <li><a href="properties.html">Properties List</a></li>
-                            <li><a href="properties-details.html">Properties Details</a></li>
-                          </ul>
+                          <a href="{% url 'accounts:user_dashboard' %}">Dashboard</a>
                         </li>
                         <li class="menu-item">
-                          <a href="agents.html">AGENTS</a>
-                        </li>
-                        <li class="menu-item-has-children">
-                          <a href="blog.html">BLOG</a>
-                          <ul class="sub-menu">
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="blog-details.html">Blog Details</a></li>
-                          </ul>
+                          <a href="{% url 'accounts:purchased_properties' %}">Purchased Properties</a>
                         </li>
                         <li class="menu-item">
-                          <a href="contact.html">Contact</a>
+                          <a href="/contact">Contact</a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="{% url 'accounts:update_user_profile' %}">Profile</a>
                         </li>
                       </ul>
                     </nav>

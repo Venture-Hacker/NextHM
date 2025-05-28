@@ -26,9 +26,10 @@ SECRET_KEY = 'django-insecure-toob1=lh!*_(2h7u%lxr)bi+i*m#5q%v0i)5pjg=m_b1$z(zl%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-
+ALLOWED_HOSTS = ["*"]  # For testing only, update in production
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8001",
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'accounts',
     'core',
     'property',
+    'conversation',
 ]
 
 MIDDLEWARE = [
@@ -72,7 +74,20 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'NextHM.wsgi.application'
+ASGI_APPLICATION = "NextHM.asgi.application"
 
+# WebSocket Settings
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("127.0.0.1", 6379)],
+        },
+    },
+}
+
+STRIPE_PUBLIC_KEY = "pk_test_51R6VXfGpOwqOPEiHlNApHX2sDYkwllziMULczBmsglFCVrz8hvhI6iIJIR1fv3VtUiuQuHPm5vtcvcw2q7Gf3H0U00ZnudvO6X"
+STRIPE_SECRET_KEY = "sk_test_51R6VXfGpOwqOPEiHyPhvlb8Vp0ioUg43VglMpMxO45zCQza4Eyz9UNxWJTashANO5iTwRyguDNkusaOd7s85KokD004sHV2Nrt"
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
@@ -110,11 +125,12 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
+USE_TZ = True
+
 
 USE_I18N = True
 
-USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
@@ -130,3 +146,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = '/accounts/login'
 LOGOUT_REDIRECT_URL = '/accounts/login'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '')

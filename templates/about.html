@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+  <!--==============================
+    Breadcumb
+    ============================== -->
+  <div class="breadcumb-wrapper" data-bg-src="{% static 'assets/img/breadcrumb/breadcrumb-1-2.jpg' %}">
+    <div class="container z-index-common">
+      <div class="breadcumb-content">
+        <div>
+          <img src="{% static 'assets/img/breadcrumb/breadcrumb-1-2.png' %}" alt="logo">
+          <h1 class="breadcumb-title">about us</h1>
+        </div>
+        <div class="breadcumb-menu-wrap">
+          <ul class="breadcumb-menu">
+            <li><a href="/">Home</a></li>
+            <li>about us</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--==============================
+Category Area
+==============================-->
+  <section class="space  bg-theme2 background-image">
+    <div class="container">
+      <div class="row justify-content-center g-5">
+        <div class="col-xl-4 col-10">
+          <div class="img-box1">
+            <div class="img-1">
+              <img src="{% static 'assets/img/category/category-2-1.png' %}" alt="About Img">
+            </div>
+            <div class="img-2 mega-hover">
+              <img class="w-100" src="{% static 'assets/img/category/category-2-2.png' %}" alt="About Img">
+              <div class="shape-dotted2 jump-reverse"></div>
+            </div>
+            <div class="img-3">
+              <img src="{% static 'assets/img/category/category-2-3.png' %}" alt="About Img">
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-5 px-lg-5">
+          <div class="title-area2">
+            <span class="sec-subtitle2">our properties</span>
+            <h2 class="sec-title2 fs-xl fw-semibold">Your Next Home Apartments</h2>
+          </div>
+          <p class="box-dsc">
+            Survived not only five centuries, but also the leap into electronic typetting, remaining
+            essentiall unchanged in the 1960s with.
+          </p>
+          <div class="list-style1 vs-list">
+            <ul>
+              <li><i class="fas fa-star"></i> Space Dummy printing </li>
+              <li><i class="fas fa-star"></i> Living Space Dummy printing and industry</li>
+              <li><i class="fas fa-star"></i> Deving Space printing and industry</li>
+            </ul>
+          </div>
+          <a href="/accounts/login" class="vs-btn style3">More Properties</a>
+        </div>
+        <div class="col-xl-3 px-0">
+          <div class="media-box">
+            <div class="media-style1">
+              <div class="media-item">
+                <div class="row gx-0 mb-30 align-items-center">
+                  <div class="icon-btn2">
+                    <img src="{% static 'assets/img/category/category-3-1.svg' %}" alt="category-icon">
+                  </div>
+                  <div class="media-content col">
+                    <h5 class="media-title">15000</h5>
+                    <p class="media-text">Total House Sale</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="media-style1">
+              <div class="media-item">
+                <div class="row gx-0 mb-30 align-items-center">
+                  <div class="icon-btn2">
+                    <img src="{% static 'assets/img/category/category-3-2.svg' %}" alt="category-icon">
+                  </div>
+                  <div class="media-content col">
+                    <h5 class="media-title">350</h5>
+                    <p class="media-text">Car Parking</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="media-style1">
+              <div class="media-item">
+                <div class="row gx-0 mb-30 align-items-center">
+                  <div class="icon-btn2">
+                    <img src="{% static 'assets/img/category/category-3-3.svg' %}" alt="category-icon">
+                  </div>
+                  <div class="media-content col">
+                    <h5 class="media-title">245</h5>
+                    <p class="media-text">Real Estate</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="media-style1 media-style1--active">
+              <div class="slick-track">
+                <div class="row gx-0 mb-30 align-items-center">
+                  <div class="icon-btn2">
+                    <img src="{% static 'assets/img/category/category-3-4.svg' %}" alt="category-icon">
+                  </div>
+                  <div class="media-content col">
+                    <h5 class="media-title">100K+</h5>
+                    <p class="media-text">Happy Customer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!--==============================
+  Testimonial Area
+  ==============================-->
+  <section class="space" style="background-image: url({% static 'assets/img/about/about-bg.jpg' %});">
+    <div class="container">
+      <h2 class="sec-title text-center">happy customer quotes</h2>
+      <div class="sec-line text-subTitle">
+        <hr>
+      </div>
+      <span class="sec-subtitle text-center">REAL ESTATE MADE EASY</span>
+      <div class="testi-style2 text-center">
+        <div class="testi-icon">
+          <img src="{% static 'assets/img/about/testi-icon.svg' %}" alt="testi-icon">
+        </div>
+        <div class="vs-carousel" data-arrows="true">
+          <div class="slick-slide">
+            <p class="testi-text">“Creation timelines for the standard lorem ipsum passage vary, with some citing the 15th
+              century and others the part of Cicero”</p>
+            <h3 class="testi-name fs-sm">alaxen pilot</h3>
+            <span class="testi-degi">Google. CEO</span>
+          </div>
+          <div class="slick-slide">
+            <p class="testi-text">There are differing timings for the creation of the traditional lorem ipsum passage.
+              Some place it in the 15th century, while others attribute.</p>
+            <h3 class="testi-name fs-sm">Kishor Saha</h3>
+            <span class="testi-degi">Google. CEO</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

@@ -1,168 +1,375 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Property | Real Estate Manager</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-image: url("{% static 'agent/images/interior.jpg' %}");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      padding: 2rem;
+      position: relative;
+    }
+    
+
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.1);
+      /* Semi-transparent white */
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      padding: 2.5rem;
+      backdrop-filter: blur(10px);
+      /* Blur effect */
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      /* Light border for depth */
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #ffffff;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      text-align: center;
+      position: relative;
+    }
 
 
-{% block content %}
-<h2 class="text-center mb-4">Add Property</h2>
-<div class="container">
-    <form method="post" enctype="multipart/form-data" class="property-form">
-        {% csrf_token %}
-        
-        <div class="form-group">
-            <label for="{{ form.title.id_for_label }}">Title</label>
-            {{ form.title }}
-        </div>
+    h2:after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #74b9ff;
+      margin: 0.5rem auto 0;
+    }
 
-        <div class="form-group">
-            <label for="{{ form.tagline.id_for_label }}">Tagline</label>
-            {{ form.tagline }}
-        </div>
-
-        <div class="form-group">
-            <label for="{{ form.phone_no.id_for_label }}">Phone No.</label>
-            {{ form.phone_no }}
-        </div>
-
-        <div class="form-group">
-            <label for="{{ form.email.id_for_label }}">Email Address</label>
-            {{ form.email }}
-        </div>
-
-        <div class="form-group">
-            <label for="{{ form.location.id_for_label }}">Location</label>
-            {{ form.location }}
-        </div>
-
-        <div class="form-group">
-            <label for="{{ form.starting_price.id_for_label }}">Starting Price</label>
-            {{ form.starting_price }}
-        </div>
-
-        <div class="form-group">
-            <label for="{{ form.area_size.id_for_label }}">Area (Size)</label>
-            {{ form.area_size }}
-        </div>
-
-        <div class="form-group">
-            <label for="{{ form.category.id_for_label }}">Category</label>
-            {{ form.category }}
-        </div>
-
-        <div class="form-group">
-            <label for="{{ form.cover_photo.id_for_label }}">Cover Photo</label>
-            {{ form.cover_photo }}
-        </div>
-
-        <div class="form-group">
-            <label for="{{ form.num_beds.id_for_label }}">No. Of Beds</label>
-            {{ form.num_beds }}
-        </div>
-
-        <div class="form-group">
-            <label for="{{ form.num_bathrooms.id_for_label }}">No. Of Bathrooms</label>
-            {{ form.num_bathrooms }}
-        </div>
-
-        <div class="form-group">
-            <label for="{{ form.features.id_for_label }}">Features</label>
-            <div class="features-checkboxes">
-                {{ form.features }}
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="{{ form.description.id_for_label }}">Description</label>
-            {{ form.description }}
-        </div>
-
-        <div class="text-center">
-            <button type="submit" class="btn btn-primary">Add Property</button>
-        </div>
-    </form>
-</div>
-
-{% endblock %}
-
-<style>
-    .property-form {
-        background-color: #f8f9fa;
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
     }
 
     .form-group {
-        margin-bottom: 20px;
+      margin-bottom: 1.5rem;
+      position: relative;
     }
 
-    label {
-        font-weight: bold;
-        color: #495057;
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #ffffff;
+      font-weight: 500;
+      font-size: 0.9rem;
     }
 
-    input[type="text"], input[type="number"], input[type="file"], textarea, select {
-        width: 100%;
-        padding: 10px;
-        margin-top: 5px;
-        border: 1px solid #ced4da;
-        border-radius: 4px;
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      color: #000000;
+      /* Black color for input text */
     }
 
-    /* Style for the features checkboxes */
-    .features-checkboxes input[type="checkbox"] {
-        display: inline-block;
-        margin-right: 10px;
-        width: 20px;
-        height: 20px;
-        vertical-align: middle;
-        transition: all 0.3s ease;
+    /* Set text color for input fields */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      color: #000000;
+      /* Black color for input text */
     }
 
-    /* Customize checkbox appearance */
-    .features-checkboxes input[type="checkbox"]:checked {
-        background-color: #007bff;
-        border-color: #007bff;
+    /* Placeholder text color */
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #666;
+      /* Gray color for placeholder text */
     }
 
-    .features-checkboxes input[type="checkbox"]:checked::before {
-        content: '\2713'; /* Checkmark */
-        color: white;
-        font-size: 14px;
-        position: absolute;
-        top: 2px;
-        left: 6px;
+    .form-group label i {
+      margin-right: 8px;
+      color: #74b9ff;
     }
 
-    .features-checkboxes input[type="checkbox"]:not(:checked) {
-        background-color: #ffffff;
-        border: 2px solid #ced4da;
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      background: #f8f9fa;
     }
 
-    .features-checkboxes input[type="checkbox"]:hover {
-        border-color: #007bff;
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #74b9ff;
+      background: white;
+      box-shadow: 0 2px 8px rgba(116, 185, 255, 0.15);
     }
 
-    .features-checkboxes label {
-        display: inline-block;
-        margin-right: 15px;
-        font-size: 14px;
-        color: #495057;
-        font-weight: normal;
-        cursor: pointer;
+    textarea {
+      resize: vertical;
+      min-height: 100px;
     }
 
-    /* Style the submit button */
-    .btn-primary {
-        background-color: #007bff;
-        border: none;
-        padding: 10px 20px;
-        font-size: 16px;
-        border-radius: 4px;
+    button {
+      background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
-    .btn-primary:hover {
-        background-color: #0056b3;
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(116, 185, 255, 0.3);
     }
 
-    .text-center {
-        text-align: center;
+    /* Updated Checkbox Styling */
+    .checkbox-group {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.5rem;
     }
-</style>
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      background: #f8f9fa;
+      padding: 0.75rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      border: 1px solid #e0e0e0;
+    }
+
+    .checkbox-item:hover {
+      background: #e3f2fd;
+      border-color: #74b9ff;
+    }
+
+    .checkbox-item label {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      cursor: pointer;
+      width: 100%;
+      color:#000000;
+    }
+
+    input[type="checkbox"] {
+      appearance: none;
+      width: 15px;
+      height: 15px;
+      border: 2px solid #ced4da;
+      border-radius: 4px;
+      margin: 0;
+      position: relative;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    input[type="checkbox"]:checked {
+      background: #74b9ff;
+      border-color: #74b9ff;
+    }
+
+    input[type="checkbox"]:checked::after {
+      content: "\2713";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    /* File Upload Styling */
+    .file-upload {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .file-upload input[type="file"] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    .file-upload label {
+      color:black;
+      display: block;
+      padding: 0.8rem 1rem;
+      background: #f8f9fa;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .file-upload label:hover {
+      border-color: #74b9ff;
+    }
+
+    @media (max-width: 768px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        padding: 1.5rem;
+        margin: 1rem;
+      }
+
+      h2 {
+        font-size: 1.75rem;
+      }
+    }
+    
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h2><i class="fas fa-home"></i>Add New Property</h2>
+    <form method="post" enctype="multipart/form-data" class="property-form">
+      {% csrf_token %}
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label><i class="fas fa-heading"></i>Property Title</label>
+          {{ form.title }}
+        </div>
+
+        <div class="form-group">
+          <label><i class="fas fa-tag"></i>Tagline</label>
+          {{ form.tagline }}
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label><i class="fas fa-phone"></i>Contact Number</label>
+          {{ form.phone_no }}
+        </div>
+
+        <div class="form-group">
+          <label><i class="fas fa-envelope"></i>Email Address</label>
+          {{ form.email }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label><i class="fas fa-map-marker-alt"></i>Location</label>
+        {{ form.location }}
+      </div>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label><i class="fas fa-rupee-sign"></i>Starting Price</label>
+          {{ form.starting_price }}
+        </div>
+
+        <div class="form-group">
+          <label><i class="fas fa-expand"></i>Area Size (sqft)</label>
+          {{ form.area_size }}
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label><i class="fas fa-bed"></i>Number of Beds</label>
+          {{ form.num_beds }}
+        </div>
+
+        <div class="form-group">
+          <label><i class="fas fa-bath"></i>Number of Bathrooms</label>
+          {{ form.num_bathrooms }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label><i class="fas fa-image"></i>Cover Photo</label>
+        <div class="file-upload">
+          {{ form.cover_photo }}
+          <label for="{{ form.cover_photo.id_for_label }}">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <span class="file-name">Choose file...</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label><i class="fas fa-list-alt"></i>Category</label>
+        {{ form.category }}
+      </div>
+
+      <div class="form-group">
+        <label><i class="fas fa-star"></i>Features</label>
+        <div class="checkbox-group">
+          {% for checkbox in form.features %}
+          <div class="checkbox-item">
+            {{ checkbox.tag }}
+            <label for="{{ checkbox.id_for_label }}">
+              {{ checkbox.choice_label }}
+            </label>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label><i class="fas fa-file-alt"></i>Description</label>
+        {{ form.description }}
+      </div>
+
+      <button type="submit">
+        <i class="fas fa-plus-circle"></i> Add Property
+      </button>
+    </form>
+  </div>
+  <script>
+    // File upload name display
+    document.getElementById('{{ form.cover_photo.id_for_label }}').addEventListener('change', function (e) {
+      const fileName = e.target.files[0]?.name || 'Choose file...';
+      document.querySelector('.file-name').textContent = fileName;
+    });
+  </script>
+</body>
+
+</html>
